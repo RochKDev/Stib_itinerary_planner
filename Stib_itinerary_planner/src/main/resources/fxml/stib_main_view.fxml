@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenter.ViewController">
+   <children>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0">
+         <content>
+            <ImageView fx:id="metroPlanImage" fitHeight="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/metro.gif" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="stibLogoImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="originLabel" text="Origin : " />
+                  <SearchableComboBox fx:id="originSearchableBox" promptText="Select origin">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </SearchableComboBox>
+                  <Label fx:id="destinationLabel" text="Destination :" />
+                  <SearchableComboBox fx:id="destinationSearchableBox" promptText="Select destination">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </SearchableComboBox>
+                  <TextField fx:id="frequentTravelTextField" promptText="Name of the frequent travel">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="searchButton" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="addFrequentButton" mnemonicParsing="false" text="Add to frequent" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="stopsTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="stationsTableColumn" prefWidth="212.0" text="Stations" />
+                      <TableColumn fx:id="linesTableColumn" minWidth="0.0" prefWidth="212.0" text="Lines" />
+                    </columns>
+                  </TableView>
+                  <Label text="Favourites :" />
+                  <ListView fx:id="FrequentListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
